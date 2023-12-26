@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:unit_converter/FunctionalClass/area.dart';
-import 'package:unit_converter/Pages/HomePage.dart';
+// ignore: depend_on_referenced_packages
 import 'package:provider/provider.dart';
+import 'package:flutter/material.dart';
+import 'package:unit_converter/Pages/HomePage.dart';
 import 'package:unit_converter/ProvidersList/customCalculator.dart';
 import 'package:unit_converter/customButtons/customDropDownMenu.dart';
 import 'package:unit_converter/ProvidersList/customProvider.dart';
@@ -17,23 +17,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-        providers: [
-          ChangeNotifierProvider(
-            create: (context) => ButtonClickProvider(),
-          ),
-          ChangeNotifierProvider(
-            create: (context) => dropDownMenuNotifier(),
-          ),
-          ChangeNotifierProvider(
-            create: (context) => customCalculator(),
-          )
-        ],
-        child: MaterialApp(
-          title: 'Unit Converter',
-          theme: ThemeData.light(),
-          home: choose_item(),
-          // home: length_converter(),
-          // home: BaseClass(menuName: "Currency", temp: length_converter()),
-        ));
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => ButtonClickProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => dropDownMenuNotifier(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => customCalculator(),
+        )
+      ],
+      child: MaterialApp(
+        title: 'Unit Converter',
+        theme: ThemeData.light(),
+        home: choose_item(),
+      ),
+    );
   }
 }
