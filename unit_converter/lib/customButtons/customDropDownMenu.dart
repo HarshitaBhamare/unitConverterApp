@@ -1,35 +1,42 @@
-import 'package:flutter/material.dart';
+// ignore: file_names, depend_on_referenced_packages
 import 'package:provider/provider.dart';
-import 'package:unit_converter/FunctionalClass/area.dart';
+import 'package:flutter/material.dart';
 import 'package:unit_converter/ProvidersList/customCalculator.dart';
 import 'package:unit_converter/ProvidersList/customProvider.dart';
 
+// ignore: camel_case_types
 class dropDownMenuNotifier with ChangeNotifier {
+  // ignore: non_constant_identifier_names
   String? SelectedInput;
+  // ignore: non_constant_identifier_names
   String? SelectedOutput;
 
+  // ignore: non_constant_identifier_names
   void SetSelectedInput(String inputString, context) {
     SelectedInput = inputString;
     notifyListeners();
   }
 
+  // ignore: non_constant_identifier_names
   void SetSelectedOutput(String outputString, context) {
     SelectedOutput = outputString;
     notifyListeners();
   }
 }
 
+// ignore: camel_case_types
 class customDropDownMenu {
   Widget customDropDownSearchFirst(List<String> list1, BuildContext context,
       Map<String, double> conversionMap) {
     final sInput = context.watch<dropDownMenuNotifier>().SelectedInput;
+    // ignore: non_constant_identifier_names
     final InputString = context.read<ButtonClickProvider>().InputString;
     return DropdownButton<String>(
       value: sInput,
-      icon: Icon(Icons.arrow_drop_down_outlined),
+      icon: const Icon(Icons.arrow_drop_down_outlined),
       elevation: 0,
       dropdownColor: Colors.grey.shade600,
-      style: TextStyle(
+      style: const TextStyle(
         color: Colors.white,
         fontSize: 15,
       ),
@@ -55,13 +62,14 @@ class customDropDownMenu {
   Widget customDropDownSearchSecond(List<String> list1, BuildContext context,
       Map<String, double> conversionMap) {
     final sOutput = context.watch<dropDownMenuNotifier>().SelectedOutput;
+    // ignore: non_constant_identifier_names
     final InputString = context.read<ButtonClickProvider>().InputString;
     return DropdownButton<String>(
       value: sOutput,
-      icon: Icon(Icons.arrow_drop_down_outlined),
+      icon: const Icon(Icons.arrow_drop_down_outlined),
       elevation: 0,
       dropdownColor: Colors.grey.shade600,
-      style: TextStyle(
+      style: const TextStyle(
         color: Colors.white,
         fontSize: 15,
       ),
