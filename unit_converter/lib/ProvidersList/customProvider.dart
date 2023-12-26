@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:provider/provider.dart';
 import 'package:unit_converter/ProvidersList/customCalculator.dart';
 
 class ButtonClickProvider with ChangeNotifier {
   bool isFake = false;
+  // ignore: non_constant_identifier_names
   String InputString = "0";
 
   void showNumber(String numText, BuildContext context,
@@ -18,21 +20,17 @@ class ButtonClickProvider with ChangeNotifier {
           InputString = InputString.substring(0, InputString.length - 1);
         } else {
           InputString = "0";
-          print("1 Char Remaining");
         }
       } else if (numText == '.') {
         if (!InputString.contains(numText)) {
           InputString += numText;
         }
       } else {
-        // print("firstInput" + numText);
-        // print("firstInput" + numbers);
         if (InputString.length == 1 && InputString.characters.first == "0") {
           InputString = numText;
         } else {
           InputString += numText;
         }
-        // print("InputString Val : " + InputString);
       }
 
       Provider.of<customCalculator>(context, listen: false)

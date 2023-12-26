@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
+import 'package:provider/provider.dart';
 import 'package:unit_converter/Pages/SetUpUi.dart';
+import 'package:unit_converter/ProvidersList/customProvider.dart';
 
 // ignore: must_be_immutable, camel_case_types
 class Temperature_converter extends StatelessWidget {
@@ -27,7 +30,7 @@ class Temperature_converter extends StatelessWidget {
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: Colors.black,
-        title: Text(
+        title: const Text(
           "Temperature",
           style: TextStyle(
             color: Colors.white,
@@ -37,9 +40,11 @@ class Temperature_converter extends StatelessWidget {
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.of(context).pop();
+            Provider.of<ButtonClickProvider>(context, listen: false)
+                .InputString = "0";
           },
         ),
       ),

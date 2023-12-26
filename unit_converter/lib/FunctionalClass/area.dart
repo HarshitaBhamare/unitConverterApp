@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
+import 'package:provider/provider.dart';
 import 'package:unit_converter/Pages/SetUpUi.dart';
+import 'package:unit_converter/ProvidersList/customProvider.dart';
 
 // ignore: must_be_immutable, camel_case_types
 class area_conversion extends StatelessWidget {
@@ -40,12 +43,13 @@ class area_conversion extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.of(context).pop(context);
+            Provider.of<ButtonClickProvider>(context, listen: false)
+                .InputString = "0";
           },
         ),
       ),
       body: SetUpUi(list1: list1, mappedConvertor: areaConversionFunc),
-      // body: Placeholder(),
     );
   }
 }

@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:unit_converter/FunctionalClass/length.dart';
 import 'package:unit_converter/FunctionalClass/pressure.dart';
@@ -13,7 +14,9 @@ import 'package:unit_converter/customButtons/customGridButton.dart';
 // ignore: camel_case_types, must_be_immutable
 class choose_item extends StatelessWidget {
   choose_item({super.key});
+  // ignore: non_constant_identifier_names
   double width_col = 70;
+  // ignore: non_constant_identifier_names
   double width_row = 20;
   @override
   Widget build(BuildContext context) {

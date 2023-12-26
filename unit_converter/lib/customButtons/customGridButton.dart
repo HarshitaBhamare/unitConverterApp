@@ -1,5 +1,7 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:unit_converter/customButtons/customDropDownMenu.dart';
+// ignore: depend_on_referenced_packages
 import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
@@ -37,7 +39,7 @@ class _BaseClassState extends State<BaseClass> {
         // splashColor: const Color.fromARGB(255, 41, 41, 41),
         splashColor: Colors.black87,
         // highlightColor: Colors.white,
-        child: Container(
+        child: SizedBox(
           height: MediaQuery.of(context).size.height * 0.15,
           width: MediaQuery.of(context).size.width * 0.25,
           child: Container(

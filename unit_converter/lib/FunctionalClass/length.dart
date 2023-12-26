@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
+import 'package:provider/provider.dart';
 import 'package:unit_converter/Pages/SetUpUi.dart';
+import 'package:unit_converter/ProvidersList/customProvider.dart';
 
 // ignore: must_be_immutable, camel_case_types
 class length_converter extends StatelessWidget {
@@ -45,6 +48,8 @@ class length_converter extends StatelessWidget {
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.of(context).pop();
+              Provider.of<ButtonClickProvider>(context, listen: false)
+                  .InputString = "0";
             },
           ),
         ),

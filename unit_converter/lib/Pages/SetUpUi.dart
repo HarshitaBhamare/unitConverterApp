@@ -1,4 +1,6 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:provider/provider.dart';
 import 'package:unit_converter/ProvidersList/customCalculator.dart';
 import 'package:unit_converter/customButtons/customButton.dart';
@@ -62,13 +64,11 @@ class _SetUpUiState extends State<SetUpUi> {
                     children: [
                       SizedBox(
                         width: MediaQuery.of(context).size.width * .90,
-                        child: Container(
-                          child: Text(
-                            inputText,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 30,
-                            ),
+                        child: Text(
+                          inputText,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 30,
                           ),
                         ),
                       ),
@@ -114,7 +114,7 @@ class _SetUpUiState extends State<SetUpUi> {
                               .watch<customCalculator>()
                               .outputValue
                               .toString(),
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 30,
                           ),
