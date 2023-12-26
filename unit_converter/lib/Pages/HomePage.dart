@@ -43,7 +43,7 @@ class choose_item extends StatelessWidget {
                 ),
                 BaseClass(
                     menuName: "Currency",
-                    temp: const currency_converter(),
+                    temp: currency_converter(),
                     imageName: 'assets/images/currency.png'),
                 SizedBox(
                   width: width_row,
@@ -57,7 +57,7 @@ class choose_item extends StatelessWidget {
                 ),
                 BaseClass(
                     menuName: "Area",
-                    temp: const area_conversion(),
+                    temp: area_conversion(),
                     imageName: 'assets/images/area.png'),
                 const SizedBox(
                   width: 10,
@@ -75,21 +75,21 @@ class choose_item extends StatelessWidget {
                 ),
                 BaseClass(
                     menuName: "Volume",
-                    temp: const Volume_converter(),
+                    temp: Volume_converter(),
                     imageName: 'assets/images/volume.png'),
                 SizedBox(
                   width: width_row,
                 ),
                 BaseClass(
                     menuName: "Weight",
-                    temp: const Weight_converter(),
+                    temp: Weight_converter(),
                     imageName: 'assets/images/weight.png'),
                 SizedBox(
                   width: width_row,
                 ),
                 BaseClass(
                     menuName: "Temperature",
-                    temp: const Temperature_converter(),
+                    temp: Temperature_converter(),
                     imageName: 'assets/images/temp.png'),
                 const SizedBox(
                   width: 10,
@@ -107,21 +107,21 @@ class choose_item extends StatelessWidget {
                 ),
                 BaseClass(
                     menuName: "Speed",
-                    temp: const Speed_converter(),
+                    temp: Speed_converter(),
                     imageName: 'assets/images/speed.png'),
                 SizedBox(
                   width: width_row,
                 ),
                 BaseClass(
                     menuName: "Pressure",
-                    temp: const Pressure_converter(),
+                    temp: Pressure_converter(),
                     imageName: 'assets/images/pressure.png'),
                 SizedBox(
                   width: width_row,
                 ),
                 BaseClass(
                     menuName: "Power",
-                    temp: const Power_converter(),
+                    temp: Power_converter(),
                     imageName: 'assets/images/power.png'),
                 const SizedBox(
                   width: 10,

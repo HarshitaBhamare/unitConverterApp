@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unit_converter/FunctionalClass/area.dart';
 import 'package:unit_converter/ProvidersList/customProvider.dart';
 import 'package:provider/provider.dart';
 
@@ -7,7 +8,12 @@ import 'package:provider/provider.dart';
 class ButtonsNum extends StatefulWidget {
   bool isFake = false;
   String? numberText;
-  ButtonsNum({super.key, required this.isFake, required this.numberText});
+  Map<String, double>? mappedConvertor;
+  ButtonsNum(
+      {super.key,
+      required this.isFake,
+      required this.numberText,
+      required this.mappedConvertor});
 
   @override
   State<ButtonsNum> createState() => _ButtonsNumState();
@@ -24,7 +30,8 @@ class _ButtonsNumState extends State<ButtonsNum> {
         children: [
           InkWell(
             onTap: () {
-              value.showNumber(widget.numberText!, context);
+              value.showNumber(
+                  widget.numberText!, context, widget.mappedConvertor!);
             },
             child: Container(
               alignment: Alignment.center,

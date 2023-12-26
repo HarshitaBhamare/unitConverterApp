@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:unit_converter/customButtons/customDropDownMenu.dart';
+import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class BaseClass extends StatefulWidget {
@@ -25,6 +27,10 @@ class _BaseClassState extends State<BaseClass> {
           // print("image Name : " + widget.imageName!);
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => widget.temp));
+          Provider.of<dropDownMenuNotifier>(context, listen: false)
+              .SetSelectedInput(widget.temp.list1!.first, context);
+          Provider.of<dropDownMenuNotifier>(context, listen: false)
+              .SetSelectedOutput(widget.temp.list1!.first, context);
         },
         borderRadius:
             BorderRadius.circular(10), // Ensures the ripple is circular

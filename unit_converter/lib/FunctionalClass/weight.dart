@@ -1,18 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:unit_converter/Pages/InnerPage.dart';
-
-List<String> list1 = <String>[
-  'gram (g)',
-  'Kilogram (kg)',
-  'Tonne (t)',
-  'Quintal (q)',
-  'Carat (ct)',
-  'Miligram (mg)',
-];
+import 'package:unit_converter/customButtons/customDropDownMenu.dart';
 
 class Weight_converter extends StatelessWidget {
-  const Weight_converter({super.key});
+  Map<String, double> massConversion = {
+    'Gram (g)': 1,
+    'Kilogram (kg)': 0.001,
+    'Tonne (t)': 1e-6,
+    'Quintal (q)': 1e-5,
+    'Carat (ct)': 5,
+    'Milligram (mg)': 1000,
+  };
 
+  List<String> list1 = <String>[
+    'Gram (g)',
+    'Kilogram (kg)',
+    'Tonne (t)',
+    'Quintal (q)',
+    'Carat (ct)',
+    'Milligram (mg)',
+  ];
+  Weight_converter({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +37,16 @@ class Weight_converter extends StatelessWidget {
             ),
           ),
           centerTitle: true,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
         ),
-        body: SetUpUi(list1: list1));
+        body: SetUpUi(
+          list1: list1,
+          mappedConvertor: massConversion,
+        ));
   }
 }

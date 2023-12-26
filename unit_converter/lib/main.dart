@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:unit_converter/FunctionalClass/area.dart';
 import 'package:unit_converter/Pages/HomePage.dart';
 import 'package:provider/provider.dart';
+import 'package:unit_converter/ProvidersList/customCalculator.dart';
 import 'package:unit_converter/customButtons/customDropDownMenu.dart';
 import 'package:unit_converter/ProvidersList/customProvider.dart';
 
@@ -21,6 +23,9 @@ class MyApp extends StatelessWidget {
           ),
           ChangeNotifierProvider(
             create: (context) => dropDownMenuNotifier(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => customCalculator(),
           )
         ],
         child: MaterialApp(

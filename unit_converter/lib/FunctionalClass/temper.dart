@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:unit_converter/Pages/InnerPage.dart';
-
-List<String> list1 = <String>[
-  'Kelvin',
-  'Degree Celsius',
-  'Degree Fahrenheit',
-  'Degree Rankine',
-  'Degree Reaumur',
-];
+import 'package:unit_converter/customButtons/customDropDownMenu.dart';
+import 'package:provider/provider.dart';
 
 class Temperature_converter extends StatelessWidget {
-  const Temperature_converter({super.key});
+  List<String> list1 = <String>[
+    'Kelvin',
+    'Degree Celsius',
+    'Degree Fahrenheit',
+    'Degree Rankine',
+    'Degree Reaumur',
+  ];
+
+  Map<String, double> temperatureConvertor = {
+    'Kelvin': 273,
+    'Degree Celsius': 273,
+    'Degree Fahrenheit': 273,
+    'Degree Rankine': 273,
+    'Degree Reaumur': 273,
+  };
+
+  Temperature_converter({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +37,14 @@ class Temperature_converter extends StatelessWidget {
           ),
         ),
         centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
       ),
-      body: SetUpUi(list1: list1),
+      body: SetUpUi(list1: list1, mappedConvertor: temperatureConvertor),
     );
   }
 }
