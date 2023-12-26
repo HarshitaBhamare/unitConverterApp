@@ -30,8 +30,8 @@ class _ButtonsNumState extends State<ButtonsNum> {
         children: [
           InkWell(
             onTap: () {
-              value.showNumber(
-                  widget.numberText!, context, widget.mappedConvertor!);
+              value.showNumber(widget.numberText!, context,
+                  widget.mappedConvertor!, widget.isFake);
             },
             child: Container(
               alignment: Alignment.center,

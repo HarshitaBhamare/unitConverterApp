@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:unit_converter/Pages/InnerPage.dart';
-import 'package:unit_converter/customButtons/customDropDownMenu.dart';
-import 'package:provider/provider.dart';
+import 'package:unit_converter/Pages/SetUpUi.dart';
 
+// ignore: must_be_immutable, camel_case_types
 class Temperature_converter extends StatelessWidget {
   List<String> list1 = <String>[
     'Kelvin',
@@ -14,10 +13,10 @@ class Temperature_converter extends StatelessWidget {
 
   Map<String, double> temperatureConvertor = {
     'Kelvin': 273,
-    'Degree Celsius': 273,
-    'Degree Fahrenheit': 273,
-    'Degree Rankine': 273,
-    'Degree Reaumur': 273,
+    'Degree Celsius': 1,
+    'Degree Fahrenheit': 18,
+    'Degree Rankine': 18,
+    'Degree Reaumur': 0.8,
   };
 
   Temperature_converter({super.key});
@@ -26,7 +25,7 @@ class Temperature_converter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: Colors.black,
         title: Text(
           "Temperature",
