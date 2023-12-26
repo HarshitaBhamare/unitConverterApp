@@ -1,7 +1,10 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:unit_converter/customButtons/customDropDownMenu.dart';
+// ignore: depend_on_referenced_packages
 import 'package:provider/provider.dart';
 
+// ignore: camel_case_types
 class customCalculator with ChangeNotifier {
   double outputValue = 0;
   void convert(
@@ -10,8 +13,6 @@ class customCalculator with ChangeNotifier {
     String fromUnit = context.read<dropDownMenuNotifier>().SelectedInput!;
     String toUnit = context.read<dropDownMenuNotifier>().SelectedOutput!;
     if (conversionMap.keys.first == 'Kelvin') {
-      print("I am temperature");
-      //the map is for temperature
       switch (fromUnit) {
         case 'Kelvin':
           switch (toUnit) {
@@ -115,16 +116,11 @@ class customCalculator with ChangeNotifier {
           break;
       }
     } else {
-      print("I am not temperature");
-// print("SelectedInput : " + fromUnit + " SelectedOutput : " + toUnit);
-      conversionMap.forEach((key, value) {
-        // print('Unit: $key, Conversion Factor: $value');
-      });
+      conversionMap.forEach((key, value) {});
 
       // Check if the units are valid for the given conversion map
       if (!conversionMap.containsKey(fromUnit) ||
           !conversionMap.containsKey(toUnit)) {
-        print("Invalid conversion units.");
         return;
       }
 
