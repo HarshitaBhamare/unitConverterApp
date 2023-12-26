@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:unit_converter/Pages/SetUpUi.dart';
-import 'package:unit_converter/customButtons/customDropDownMenu.dart';
 
+// ignore: must_be_immutable, camel_case_types
 class Weight_converter extends StatelessWidget {
   Map<String, double> massConversion = {
     'Gram (g)': 1,
@@ -26,9 +25,9 @@ class Weight_converter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.white),
+          iconTheme: const IconThemeData(color: Colors.white),
           backgroundColor: Colors.black,
-          title: Text(
+          title: const Text(
             "Weight Conversion",
             style: TextStyle(
               color: Colors.white,
@@ -38,7 +37,7 @@ class Weight_converter extends StatelessWidget {
           ),
           centerTitle: true,
           leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.of(context).pop();
             },
