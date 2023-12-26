@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:unit_converter/FunctionalClass/area.dart';
 import 'package:unit_converter/customButtons/customButton.dart';
 import 'package:unit_converter/customButtons/customDropDownMenu.dart';
-import 'package:unit_converter/customProvider.dart';
+import 'package:unit_converter/ProvidersList/customProvider.dart';
 
 // ignore: must_be_immutable
 class SetUpUi extends StatefulWidget {
