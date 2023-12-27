@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:provider/provider.dart';
 import 'package:unit_converter/Pages/SetUpUi.dart';
+import 'package:unit_converter/ProvidersList/customCalculator.dart';
 import 'package:unit_converter/ProvidersList/customProvider.dart';
 
 // ignore: must_be_immutable, camel_case_types
@@ -15,17 +16,10 @@ class Weight_converter extends StatelessWidget {
     'Milligram (mg)': 1000,
   };
 
-  List<String> list1 = <String>[
-    'Gram (g)',
-    'Kilogram (kg)',
-    'Tonne (t)',
-    'Quintal (q)',
-    'Carat (ct)',
-    'Milligram (mg)',
-  ];
   Weight_converter({super.key});
   @override
   Widget build(BuildContext context) {
+    List<String> ls = massConversion.keys.toList();
     return Scaffold(
         appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.white),
@@ -43,13 +37,14 @@ class Weight_converter extends StatelessWidget {
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.of(context).pop();
+              Provider.of<customCalculator>(context, listen: false).setZero();
               Provider.of<ButtonClickProvider>(context, listen: false)
                   .InputString = "0";
             },
           ),
         ),
         body: SetUpUi(
-          list1: list1,
+          list1: ls,
           mappedConvertor: massConversion,
         ));
   }

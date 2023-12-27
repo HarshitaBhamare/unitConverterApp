@@ -132,4 +132,9 @@ class customCalculator with ChangeNotifier {
       notifyListeners(); // Notify the UI or any other listeners of the change
     }
   }
+
+  void setZero() {
+    outputValue = 0;
+    notifyListeners();
+  }
 }

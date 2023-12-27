@@ -17,7 +17,7 @@ class choose_item extends StatelessWidget {
   // ignore: non_constant_identifier_names
   double width_col = 70;
   // ignore: non_constant_identifier_names
-  double width_row = 20;
+  double width_row = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

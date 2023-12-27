@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:provider/provider.dart';
 import 'package:unit_converter/Pages/SetUpUi.dart';
+import 'package:unit_converter/ProvidersList/customCalculator.dart';
 import 'package:unit_converter/ProvidersList/customProvider.dart';
 
 // ignore: camel_case_types, must_be_immutable
@@ -14,17 +15,10 @@ class Volume_converter extends StatelessWidget {
     'Deciliter (dl)': 10,
   };
 
-  List<String> list1 = <String>[
-    'Liter (l)',
-    'Centiliter (cl)',
-    'Milliliter (ml)',
-    'Hectoliter (hl)',
-    'Deciliter (dl)',
-  ];
-
   Volume_converter({super.key});
   @override
   Widget build(BuildContext context) {
+    List<String> ls = volumeConversion.keys.toList();
     return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.white),
@@ -42,12 +36,13 @@ class Volume_converter extends StatelessWidget {
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.of(context).pop();
+            Provider.of<customCalculator>(context, listen: false).setZero();
             Provider.of<ButtonClickProvider>(context, listen: false)
                 .InputString = "0";
           },
         ),
       ),
-      body: SetUpUi(list1: list1, mappedConvertor: volumeConversion),
+      body: SetUpUi(list1: ls, mappedConvertor: volumeConversion),
     );
   }
 }

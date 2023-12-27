@@ -2,22 +2,11 @@ import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:provider/provider.dart';
 import 'package:unit_converter/Pages/SetUpUi.dart';
+import 'package:unit_converter/ProvidersList/customCalculator.dart';
 import 'package:unit_converter/ProvidersList/customProvider.dart';
 
 // ignore: must_be_immutable, camel_case_types
 class Pressure_converter extends StatelessWidget {
-  List<String> list1 = <String>[
-    'Bar',
-    'Standard atmosphere (atm)',
-    'Millimeter of water (mmH20)',
-    'Pounds/sqaure foot (psf)',
-    'Pounds/sqaure inch (psi)',
-    'Millimeter of mercury (mmHg)',
-    'Inch of mercury (inHg)',
-    'Millibar (mbar)',
-    'Hectopascal (hPa)',
-    'Kilopasacal (kPa)'
-  ];
   Map<String, double> pressureConversion = {
     'Bar': 1,
     'Standard atmosphere (atm)': 1.01325,
@@ -35,6 +24,7 @@ class Pressure_converter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> ls = pressureConversion.keys.toList();
     return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.white),
@@ -52,12 +42,13 @@ class Pressure_converter extends StatelessWidget {
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.of(context).pop();
+            Provider.of<customCalculator>(context, listen: false).setZero();
             Provider.of<ButtonClickProvider>(context, listen: false)
                 .InputString = "0";
           },
         ),
       ),
-      body: SetUpUi(list1: list1, mappedConvertor: pressureConversion),
+      body: SetUpUi(list1: ls, mappedConvertor: pressureConversion),
     );
   }
 }

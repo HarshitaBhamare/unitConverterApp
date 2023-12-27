@@ -2,22 +2,11 @@ import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:provider/provider.dart';
 import 'package:unit_converter/Pages/SetUpUi.dart';
+import 'package:unit_converter/ProvidersList/customCalculator.dart';
 import 'package:unit_converter/ProvidersList/customProvider.dart';
 
 // ignore: must_be_immutable, camel_case_types
 class currency_converter extends StatelessWidget {
-  List<String> list1 = <String>[
-    'Indian Rupee (INR)',
-    'US Dollar (USD)',
-    'Euro (EUR)',
-    'Japanese Yan (JPY)',
-    'British Pound Sterling (GBP)',
-    'Australian Dollar (AUD)',
-    'Canadian Dollar (CAD)',
-    'Swiss Franc (CHF)',
-    'Chinese Yuan (CNY) ',
-    'New Zealand Dollar (NZD) ',
-  ];
   Map<String, double> currencyConversion = {
     'Indian Rupee (INR)': 1,
     'US Dollar (USD)': 0.013,
@@ -35,6 +24,7 @@ class currency_converter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> ls = currencyConversion.keys.toList();
     return Scaffold(
         appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.white),
@@ -54,11 +44,12 @@ class currency_converter extends StatelessWidget {
               Navigator.of(context).pop();
               Provider.of<ButtonClickProvider>(context, listen: false)
                   .InputString = "0";
+              Provider.of<customCalculator>(context, listen: false).setZero();
             },
           ),
         ),
         body: SetUpUi(
-          list1: list1,
+          list1: ls,
           mappedConvertor: currencyConversion,
         ));
   }

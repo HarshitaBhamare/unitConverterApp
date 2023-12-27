@@ -2,19 +2,11 @@ import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:provider/provider.dart';
 import 'package:unit_converter/Pages/SetUpUi.dart';
+import 'package:unit_converter/ProvidersList/customCalculator.dart';
 import 'package:unit_converter/ProvidersList/customProvider.dart';
 
 // ignore: must_be_immutable, camel_case_types
 class Speed_converter extends StatelessWidget {
-  List<String> list1 = <String>[
-    'Kilometer/hour(km/h)',
-    'Kilometer/second (km/s)',
-    'Mile/hour (mph)',
-    'Mach (Ma)',
-    'Inch/second (in/s)',
-    'Meter/second(m/s)',
-    'Speed of light (c)',
-  ];
   Map<String, double> speedConversion = {
     'Kilometer/hour (km/h)': 1,
     'Kilometer/second (km/s)': 0.000277778,
@@ -29,6 +21,7 @@ class Speed_converter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> ls = speedConversion.keys.toList();
     return Scaffold(
         appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.white),
@@ -46,13 +39,14 @@ class Speed_converter extends StatelessWidget {
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.of(context).pop();
+              Provider.of<customCalculator>(context, listen: false).setZero();
               Provider.of<ButtonClickProvider>(context, listen: false)
                   .InputString = "0";
             },
           ),
         ),
         body: SetUpUi(
-          list1: list1,
+          list1: ls,
           mappedConvertor: speedConversion,
         ));
   }

@@ -25,7 +25,7 @@ class _SetUpUiState extends State<SetUpUi> {
       Provider.of<dropDownMenuNotifier>(context, listen: false)
           .SetSelectedInput(widget.list1!.first, context);
       Provider.of<dropDownMenuNotifier>(context, listen: false)
-          .SetSelectedOutput(widget.list1!.first, context);
+          .SetSelectedOutput(widget.list1!.elementAt(1), context);
     });
   }
 

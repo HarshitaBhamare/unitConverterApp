@@ -2,20 +2,11 @@ import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:provider/provider.dart';
 import 'package:unit_converter/Pages/SetUpUi.dart';
+import 'package:unit_converter/ProvidersList/customCalculator.dart';
 import 'package:unit_converter/ProvidersList/customProvider.dart';
 
 // ignore: must_be_immutable, camel_case_types
 class length_converter extends StatelessWidget {
-  List<String> list1 = <String>[
-    'Meter (m)',
-    'Centimeter (cm)',
-    'Millimeter (mm)',
-    'Kilometer (km)',
-    'Mile (mi)',
-    'Decimeter (dm)',
-    'Light year (ly)',
-    'Nanometer (nm)'
-  ];
   Map<String, double> lengthConversion = {
     'Meter (m)': 1,
     'Centimeter (cm)': 100,
@@ -31,6 +22,7 @@ class length_converter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> ls = lengthConversion.keys.toList();
     return Scaffold(
         appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.white),
@@ -50,12 +42,13 @@ class length_converter extends StatelessWidget {
               Navigator.of(context).pop();
               Provider.of<ButtonClickProvider>(context, listen: false)
                   .InputString = "0";
+              Provider.of<customCalculator>(context, listen: false).setZero();
             },
           ),
         ),
         body: Center(
           // child: SetUp_Ui(gettingClass: ),
-          child: SetUpUi(list1: list1, mappedConvertor: lengthConversion),
+          child: SetUpUi(list1: ls, mappedConvertor: lengthConversion),
         ));
   }
 }

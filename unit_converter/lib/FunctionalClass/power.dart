@@ -2,19 +2,11 @@ import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:provider/provider.dart';
 import 'package:unit_converter/Pages/SetUpUi.dart';
+import 'package:unit_converter/ProvidersList/customCalculator.dart';
 import 'package:unit_converter/ProvidersList/customProvider.dart';
 
 // ignore: must_be_immutable, camel_case_types
 class Power_converter extends StatelessWidget {
-  List<String> list1 = <String>[
-    'Watt (W)',
-    'Joule/Second (J/s)',
-    'Kilogram-meter/second (kg-m/s)',
-    'Kilocalories/second (kcal/s)',
-    'Imperial horsepower (hp)',
-    'Newton-meter/second (N-m/s)',
-    'Kilowatt (kW)'
-  ];
   Map<String, double> powerConversion = {
     'Watt (W)': 1,
     'Joule/Second (J/s)': 1,
@@ -29,6 +21,7 @@ class Power_converter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> ls = powerConversion.keys.toList();
     return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.white),
@@ -46,13 +39,14 @@ class Power_converter extends StatelessWidget {
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.of(context).pop();
+            Provider.of<customCalculator>(context, listen: false).setZero();
             Provider.of<ButtonClickProvider>(context, listen: false)
                 .InputString = "0";
           },
         ),
       ),
       body: SetUpUi(
-        list1: list1,
+        list1: ls,
         mappedConvertor: powerConversion,
       ),
     );

@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
         )
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Unit Converter',
         theme: ThemeData.light(),
         home: choose_item(),

@@ -50,14 +50,20 @@ class _BaseClassState extends State<BaseClass> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(widget.imageName!),
+                Image.asset(
+                  widget.imageName!,
+                  height: MediaQuery.of(context).size.height / 20,
+                  width: MediaQuery.of(context).size.height / 20,
+                ),
                 SizedBox(
                   // height: 10,
                   height: MediaQuery.of(context).size.height * .015,
                 ),
                 Text(
                   widget.menuName!,
-                  style: const TextStyle(fontSize: 19, color: Colors.white),
+                  style: TextStyle(
+                      fontSize: MediaQuery.of(context).size.height / 50,
+                      color: Colors.white),
                 )
               ],
             ),
