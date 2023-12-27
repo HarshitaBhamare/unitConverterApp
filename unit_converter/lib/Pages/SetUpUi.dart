@@ -38,7 +38,7 @@ class _SetUpUiState extends State<SetUpUi> {
       child: Column(
         children: [
           SizedBox(
-            height: MediaQuery.of(context).size.width * .01,
+            height: MediaQuery.of(context).size.width * .03,
           ),
           Container(
             decoration: BoxDecoration(
@@ -63,7 +63,7 @@ class _SetUpUiState extends State<SetUpUi> {
                   child: Column(
                     children: [
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * .90,
+                        width: MediaQuery.of(context).size.width * .85,
                         child: Text(
                           inputText,
                           style: const TextStyle(
@@ -79,12 +79,12 @@ class _SetUpUiState extends State<SetUpUi> {
             ),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height * .035,
+            height: MediaQuery.of(context).size.height * .037,
             child: const Text(
               "TO",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 23,
+                fontSize: 20,
               ),
             ),
           ),
@@ -108,7 +108,7 @@ class _SetUpUiState extends State<SetUpUi> {
                   child: Column(
                     children: [
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * .90,
+                        width: MediaQuery.of(context).size.width * .85,
                         child: Text(
                           context
                               .watch<customCalculator>()
